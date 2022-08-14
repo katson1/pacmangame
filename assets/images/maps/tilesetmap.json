@@ -1,0 +1,15 @@
+{ "columns":30,
+ "image":"tileartgoogle.png",
+ "imageheight":960,
+ "imagewidth":960,
+ "margin":0,
+ "name":"teste",
+ "spacing":0,
+ "tilecount":900,
+ "tiledversion":"1.9.1",
+ "tileheight":32,
+ "tilewidth":32,
+ "transparentcolor":"#ff00ff",
+ "type":"tileset",
+ "version":"1.8"
+}
