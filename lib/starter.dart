@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:pacmangame/pacman/pacman.dart';
 
 import 'main.dart';
 
@@ -16,8 +17,15 @@ class _StarterState extends State<Starter> {
     return BonfireTiledWidget(
       map: TiledWorldMap(
         'maps/mapa.json',
-        forceTileSize: const Size(32, 32),
+        forceTileSize: const Size(tileSize, tileSize),
       ),
+      player: Pacman(),
+      joystick: Joystick(
+        keyboardConfig: KeyboardConfig(
+          keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows,
+        ),
+      ),
+      showCollisionArea: false,
     );
   }
 }
