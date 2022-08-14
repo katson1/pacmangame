@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:pacmangame/ghost/ghost.dart';
 import 'package:pacmangame/pacman/pacman.dart';
 
 import 'main.dart';
@@ -26,6 +27,12 @@ class _StarterState extends State<Starter> {
         ),
       ),
       showCollisionArea: false,
+      components: [
+        Ghost(position: Vector2(445, 200), color: 'red'),
+        Ghost(position: Vector2(478, 240), color: 'blue'),
+        Ghost(position: Vector2(478, 200), color: 'yellow'),
+        Ghost(position: Vector2(445, 240), color: 'pink'),
+      ],
     );
   }
 }

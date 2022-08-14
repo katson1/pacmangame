@@ -24,8 +24,7 @@ class Pacman extends SimplePlayer with ObjectCollision{
     setupCollision(
         CollisionConfig(
             collisions: [
-              CollisionArea.rectangle(
-                  size: Vector2(32,30),
+              CollisionArea.circle(radius: 15.1,
                   align: Vector2(0,0)
               ),
             ],
