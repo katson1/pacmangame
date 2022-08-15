@@ -61,7 +61,7 @@ class _StarterState extends State<Starter> {
           Food(position: Vector2(40,360)),
           Food(position: Vector2(40,580)),
         ],
-      ), Text('Score: ')
+      ), Text(' ')
       ],
     );
   }

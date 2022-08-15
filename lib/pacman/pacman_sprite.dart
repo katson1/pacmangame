@@ -4,12 +4,13 @@ class PacManSprite {
   static Future<SpriteAnimation> _sequenceImage(
       String fileName, {
         int amount = 3,
+        stepTime = 0.09,
       }) {
     return SpriteAnimation.load(
         'pacman/$fileName',
         SpriteAnimationData.sequenced(
             amount: amount,
-            stepTime: 0.09,
+            stepTime: stepTime,
             textureSize: Vector2(15, 15),
             texturePosition: Vector2(0, 0))
     );
@@ -33,5 +34,7 @@ class PacManSprite {
       _sequenceImage('pacman-idletop.png', amount: 1);
   static Future<SpriteAnimation> get idleBot =>
       _sequenceImage('pacman-idlebot.png', amount: 1);
-
+    //DIE
+  static Future<SpriteAnimation> get die =>
+      _sequenceImage('pacman-die.png', amount: 1,stepTime: 2);
 }

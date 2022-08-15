@@ -19,6 +19,7 @@ class Pacman extends SimplePlayer with ObjectCollision{
       runUp: PacManSprite.runTop,
       idleDown: PacManSprite.idleBot,
       runDown: PacManSprite.runBot,
+
     ),
   ){
     setupCollision(
@@ -49,7 +50,22 @@ class Pacman extends SimplePlayer with ObjectCollision{
   }
 
   @override
-  void die() async {
+  void die() {
+    gameRef.add(
+      AnimatedObjectOnce(
+        animation: SpriteAnimation.load(
+          'pacman/pacman-die.png',
+          SpriteAnimationData.sequenced(
+            amount: 12,
+            stepTime: 1,
+            textureSize: Vector2(16, 16),
+          ),
+        ),
+        position: position,
+        size: Vector2(32, 32),
+      ),
+    );
+    removeFromParent();
     super.die();
   }
 }
