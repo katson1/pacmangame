@@ -62,6 +62,7 @@ flutter:
     - assets/images/
     - assets/images/maps/
     - assets/images/pacman/
+    - assets/images/food/
     - assets/images/ghost/
     - assets/images/ghost/blue/
     - assets/images/ghost/pink/

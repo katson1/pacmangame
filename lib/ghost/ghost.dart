@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:bonfire/bonfire.dart';
-import 'package:bonfire/util/mixins/direction_animation.dart';
 import 'package:pacmangame/ghost/ghost_sprite.dart';
 
 class Ghost extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
@@ -34,11 +31,6 @@ class Ghost extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
 
     seeAndMoveToPlayer(
       closePlayer: (player) {
-        simpleAttackMelee(
-          damage: 10,
-          size: Vector2(40, 40),
-          withPush: false,
-        );
       },
       radiusVision: 50,
     );

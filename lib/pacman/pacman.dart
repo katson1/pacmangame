@@ -1,12 +1,12 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:pacmangame/food/food.dart';
+import 'package:pacmangame/ghost/ghost.dart';
 import 'package:pacmangame/main.dart';
 import 'package:pacmangame/pacman/pacman_sprite.dart';
 
 class Pacman extends SimplePlayer with ObjectCollision{
   Pacman():super(
-    position: Vector2(
-        tileSize * 5,
-        tileSize * 5 ),
+    position: Vector2(460,575),
     size: Vector2(
         tileSize,
         tileSize),
@@ -30,5 +30,26 @@ class Pacman extends SimplePlayer with ObjectCollision{
             ],
        ),
     );
+  }
+  
+  @override
+  void update(double dt) {
+
+    super.update(dt);
+  }
+
+  @override
+  bool onCollision(GameComponent component, bool active) {
+
+    if(component is Ghost){
+      die();
+    }
+
+    return super.onCollision(component, active);
+  }
+
+  @override
+  void die() async {
+    super.die();
   }
 }
