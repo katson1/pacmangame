@@ -12,7 +12,7 @@ class GhostSprite {
         SpriteAnimationData.sequenced(
             amount: amount,
             stepTime: 0.10,
-            textureSize: Vector2(16, 15),
+            textureSize: Vector2(20, 16),
             texturePosition: Vector2(0, 0))
     );
   }

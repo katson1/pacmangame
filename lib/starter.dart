@@ -28,10 +28,10 @@ class _StarterState extends State<Starter> {
       ),
       showCollisionArea: false,
       components: [
-        Ghost(position: Vector2(445, 200), color: 'red'),
-        Ghost(position: Vector2(478, 240), color: 'blue'),
-        Ghost(position: Vector2(478, 200), color: 'yellow'),
-        Ghost(position: Vector2(445, 240), color: 'pink'),
+        Ghost(position: Vector2(415, 192), color: 'red'),
+        Ghost(position: Vector2(515, 192), color: 'blue'),
+        Ghost(position: Vector2(516, 238), color: 'yellow'),
+        Ghost(position: Vector2(415, 238), color: 'pink'),
       ],
     );
   }

@@ -1,28 +1,56 @@
+import 'dart:math';
+
 import 'package:bonfire/bonfire.dart';
+import 'package:bonfire/util/mixins/direction_animation.dart';
 import 'package:pacmangame/ghost/ghost_sprite.dart';
 
-class Ghost extends SimpleEnemy with ObjectCollision {
+class Ghost extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
+  
   Ghost({
     required Vector2 position,
     required String color,
   }) : super(
     position: position,
     size: Vector2(32, 32),
-    speed: 50,
+    speed: 80,
     animation: getSDA(color),
     life: 50,
   ) {
     setupCollision(
       CollisionConfig(
         collisions: [
-          CollisionArea.rectangle(
-            size: Vector2(20, 20),
-            align: Vector2(6, 15),
+          CollisionArea.circle(
+            radius: 15,
+            align: Vector2(3, 3),
           ),
         ],
       ),
     );
   }
+
+  @override
+  void update(double dt) {
+    runRandomMovement(dt, speed: 80, maxDistance: 1000, minDistance: 70,timeKeepStopped: 1);
+
+    seeAndMoveToPlayer(
+      closePlayer: (player) {
+        simpleAttackMelee(
+          damage: 10,
+          size: Vector2(40, 40),
+          withPush: false,
+        );
+      },
+      radiusVision: 50,
+    );
+
+    super.update(dt);
+  }
+
+  @override
+  void die() {
+    super.die();
+  }
+
 }
 
 SimpleDirectionAnimation getSDA (String color){
@@ -94,4 +122,5 @@ SimpleDirectionAnimation getSDA (String color){
       );
     }
   }
+
 }
